@@ -49,9 +49,9 @@ pipeline {
             steps {
                 script {
                     sh """
-                        cat flask-deployment.yml
-                        sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' flask-deployment.yml
-                        cat flask-deployment.yml
+                        cat flask-deployment.yaml
+                        sed -i 's/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/g' flask-deployment.yaml
+                        cat flask-deployment.yaml
                     """
                 }
             }
