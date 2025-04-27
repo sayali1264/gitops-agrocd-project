@@ -1,11 +1,13 @@
-FROM python:latest
+FROM nginx:alpine
 
-RUN pip install flask
+# Remove the default nginx index page
+RUN rm -rf /usr/share/nginx/html/*
 
-WORKDIR /app
+# Create a custom HTML file
+RUN echo "Hello World" > /usr/share/nginx/html/index.html
 
-COPY app.py .
+# Expose port 80
+EXPOSE 80
 
-EXPOSE 5000
-
-ENTRYPOINT ["python", "app.py"]
+# Start nginx
+CMD ["nginx", "-g", "daemon off;"]
