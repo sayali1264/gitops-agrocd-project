@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-app-container
-        image: ssayalipawar1264/docker_repo:v1
+        image: sayalipawar1264/docker_repo:v1
         resources:
           limits:
             memory: "128Mi"
